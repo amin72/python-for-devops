@@ -2,7 +2,7 @@ install:
     # install commands
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt&&\
-        python -c "import nltk; nltk.download('punkt')"
+        python -m textblob.download_corpora
 
 format:
     # format code
@@ -18,6 +18,10 @@ test:
 
 build:
     # build container
+	docker build -t deploy-fastapi .
+
+run:
+	docker run -p 8080:8080 deploy-fastapi
 
 deploy:
     # deploy
