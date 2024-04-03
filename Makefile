@@ -1,7 +1,8 @@
 install:
     # install commands
 	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+		pip install -r requirements.txt&&\
+        python -c "import nltk; nltk.download('punkt')"
 
 format:
     # format code
@@ -13,7 +14,7 @@ lint:
 
 test:
     # test
-	pytest -vv --cov=mylib
+	pytest -vv --cov
 
 build:
     # build container

@@ -6,4 +6,4 @@ def test_wiki():
 
 
 def test_search_wiki():
-    assert 'Amin' in search_wiki('Amin')
+    assert "Amin" in search_wiki("Amin")
