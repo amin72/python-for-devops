@@ -9,6 +9,8 @@ format:
 
 lint:
     # flake8 or pylint
+	pylint --disable=R,C *.py mylib/*.py
+
 test:
     # test
 deploy:
