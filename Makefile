@@ -13,6 +13,7 @@ lint:
 
 test:
     # test
+	pytest -vv --cov=mylib
 
 build:
     # build container
