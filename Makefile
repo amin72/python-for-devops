@@ -1,7 +1,7 @@
 install:
     # install commands
 	pip install --upgrade pip &&\
-		pip install -r requirements.txt&&\
+		pip install -r requirements.txt
 
 post-install:
 		python -m textblob.download_corpora
