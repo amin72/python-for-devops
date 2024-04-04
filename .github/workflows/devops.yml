@@ -50,4 +50,4 @@ jobs:
       - name: Deploy image
         run: |
           sudo docker pull aminasa/deploy-fastapi:latest
-          sudo docker run -p 8080:8080 aminasa/deploy-fastapi:latest
+          sudo docker run -p 127.0.0.1:9000:8080 aminasa/deploy-fastapi:latest
