@@ -49,4 +49,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             sudo docker pull aminasa/deploy-fastapi:latest
-            sudo docker run -d -p 127.0.0.1:9000:8080 aminasa/deploy-fastapi:latest
+            sudo docker stop aminasa/deploy-fastapi || true
+            sudo docker rm aminasa/deploy-fastapi || true
+            sudo docker run -d -p 127.0.0.1:9000:8080 --name deploy-fastapi aminasa/deploy-fastapi:latest
