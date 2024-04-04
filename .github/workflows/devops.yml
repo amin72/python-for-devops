@@ -43,6 +43,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/ubuntu/python-for-devops
-            whoami
-            # git pull origin main
-            # make deploy
+            git pull origin main
+            make deploy

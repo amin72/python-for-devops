@@ -27,5 +27,6 @@ run:
 
 deploy:
     # deploy
+	echo "We're done" > tempfile
 
-all: install format lint test deploy
+all: install post-install format lint test deploy
