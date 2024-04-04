@@ -27,6 +27,7 @@ run:
 
 deploy:
     # deploy
-	echo "We're done" > tempfile
+	sudo docker pull aminasa/deploy-fastapi:latest &&\
+		sudo docker run -p 8080:8080 deploy-fastapi
 
 all: install post-install format lint test deploy

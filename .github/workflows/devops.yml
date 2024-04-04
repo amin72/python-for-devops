@@ -40,25 +40,14 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      # - name: Log in to Docker registry
-        # run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_ACCESS_TOKEN }}
-
-      - name: SSH into VPS and deploy
+      - name: SSH into VPS
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           port: ${{ secrets.VPS_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            sudo docker pull aminasa/deploy-fastapi:latest
-
-            # cd /home/ubuntu
-            # if [ ! -d "python-for-devops" ]; then
-            #   git clone https://github.com/amin72/python-for-devops
-            # else
-            #   cd python-for-devops
-            #   git pull origin main
-            # fi
-            # # make deploy
+      - name: Deploy image
+        run: |
+          make deploy
 
