@@ -48,8 +48,8 @@ jobs:
           port: ${{ secrets.VPS_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            sudo docker stop aminasa/deploy-fastapi || true
-            sudo docker rm aminasa/deploy-fastapi || true
+            sudo docker stop deploy-fastapi || true
+            sudo docker rm deploy-fastapi || true
             sudo docker rmi aminasa/deploy-fastapi || true
 
             sudo docker pull aminasa/deploy-fastapi:latest
