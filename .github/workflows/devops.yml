@@ -44,7 +44,7 @@ jobs:
           script: |
             cd /home/ubuntu
             if [ ! -d "python-for-devops" ]; then
-              git clone https://github.com/amin72/python-for-devops.git
+              git clone https://github.com/amin72/python-for-devops
             else
               cd python-for-devops
               git pull origin main
