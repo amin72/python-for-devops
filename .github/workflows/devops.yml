@@ -52,7 +52,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_ACCESS_TOKEN }}
-            docker pull aminasa/deploy-fastapi:latest
+            sudo docker pull aminasa/deploy-fastapi:latest
 
             # cd /home/ubuntu
             # if [ ! -d "python-for-devops" ]; then
