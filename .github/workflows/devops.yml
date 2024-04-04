@@ -49,5 +49,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Deploy image
         run: |
-          make deploy
-
+          sudo docker pull aminasa/deploy-fastapi:latest
+          sudo docker run -p 8080:8080 deploy-fastapi
